@@ -120,6 +120,32 @@
                     </ol>
                     <!-- Fin de miga de pan -->
 
+                    <!-- Mensajes de alertas -->
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
+                    </div>
+                    <div class="alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
+                    </div>
+                    <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
+                    </div>
+
                     <!-- Contenedor de contenido especifico -->
                     <div class="container-fluid">
                         <div class="row">
@@ -181,33 +207,7 @@
                         <div class="row">
                             <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
                             <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-
-                        <div class="row">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                                Launch demo modal
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            ...
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div>                       
                     </div>
                     <!-- Fin de contenedor de contenido especifico -->
 
@@ -267,7 +267,53 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>                        
+
+                        <!-- Formulario de Contáctenos -->
+                        <div>
+                            <div class="modal fade" id="modalContactenos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-center" id="myModalLabel">Contáctenos | Farmer's Market</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="mcNombre" class="col-sm-2 control-label">Nombre</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" name="mcNombre"
+                                                               id="mcNombre" placeholder="Ingrese su nombre">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="mcCorreo" class="col-sm-2 control-label">Correo</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" name="mcCorreo"
+                                                               id="mcCorreo" placeholder="Ingrese su correo electrónico">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-2 control-label">Mensaje</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea class="form-control" rows="4" placeholder="Ingrese su mensaje para la compañía Farmer's Market"></textarea>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-success">Enviar Mensaje</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <!-- Fin de formulario de Contáctenos -->
+
 
                     </div>
 
@@ -281,8 +327,8 @@
                 <div class="col-md-13">
                     <!-- Footer (Nota: Escribir el código que permita que esto quede abajo fijo) -->
                     <ol class="breadcrumb container-fluid">
-                        <em class="text-center">Todos los derechos reservados / Bootstrap / Font-Awesome</em>
-                        <em class="pull-right"><a href="#">Contactar un Administrador</a></em>
+                        <em class="text-center">Todos los derechos reservados / <a href="http://getbootstrap.com/">Bootstrap</a> / <a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a> / <a href="http://jquery.com/">JQuery</a></em>
+                        <em class="pull-right"><a href="#" data-toggle="modal" data-target="#modalContactenos">Contactar un Administrador</a></em>
                     </ol>
 
                 </div>
