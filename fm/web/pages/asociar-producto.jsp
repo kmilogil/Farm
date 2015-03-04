@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
         <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>Farmer's Market</title>
+        <title>Asociar Producto - Farmer's Market</title>
     </head>
     <body>
         <div class="container">
@@ -48,11 +48,11 @@
 
                     <!-- Menú de navegación -->
                     <ul class="nav nav-pills nav-stacked">
-                        <li role="presentation" class="active text-left"><a href="#">Inicio <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Mis pedidos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Productos <i class="fa fa-shopping-cart "></i></a></li>                        
-                        <li role="presentation" class="text-left"><a href="#">Mis Productos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Catalogo <i class="fa fa-list-alt "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="indexp.jsp">Inicio <i class="fa fa-home "></i></a></li>
+                        <li role="presentation" class="active text-left"><a href="asociar-producto.jsp">Asociar Productos <i class="fa fa-arrows-h"></i></a></li>
+                        <li role="presentation" class="text-left"><a href="mis-pedidos.jsp">Mis Pedidos <i class="fa fa-cubes "></i></a></li>                        
+                        <li role="presentation" class="text-left"><a href="mis-ofertas.jsp">Mis Ofertas <i class="fa fa-cart-arrow-down "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="mis-productos.jsp">Mis Productos <i class="fa fa-list-alt "></i></a></li>
                     </ul>
                     <!-- Fin del menú de navegación -->
 
@@ -114,9 +114,8 @@
 
                     <!-- Miga de pan -->
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
+                        <li><a href="indexp.jsp">Inicio</a></li>
+                        <li><a href="asociar-producto.jsp">Asociar Producto</a></li>                        
                     </ol>
                     <!-- Fin de miga de pan -->
 
@@ -150,65 +149,79 @@
                     <!-- Contenedor de contenido especifico -->
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
+                            <div class="col-md-10" >
+                                <form method="POST" action="">                                    
+                                    <legend class="text-center">Seleccione los productos a ofertar</legend>
+                                    <form class="navbar-form navbar-right" role="search">
+                                        <div class="form-group">
+                                            <div class="input-group">                                            
+                                                <input type="text" class="form-control text-center" placeholder="Encuentra el producto que estás buscando...">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-default" type="submit">Buscar!</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Presentación</th>
+                                                <th>Categoria</th>
+                                                <th>Imagen</th>
+                                                <th>Seleccionar</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Lechuga</td>
+                                                <td>Kilo</td>
+                                                <td>Hortaliza</td>
+                                                <td><img src="../img/productos/lechuga.png" alt="Imagen de la lechuga" width="50"></td>
+                                                <td class="text-center"><input type="checkbox" name="apProductos" id="apProductos"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lechuga</td>
+                                                <td>Kilo</td>
+                                                <td>Hortaliza</td>
+                                                <td><img src="../img/productos/lechuga.png" alt="Imagen de la lechuga" width="50"></td>
+                                                <td class="text-center"><input type="checkbox" name="apProductos" id="apProductos"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lechuga</td>
+                                                <td>Kilo</td>
+                                                <td>Hortaliza</td>
+                                                <td><img src="../img/productos/lechuga.png" alt="Imagen de la lechuga" width="50"></td>
+                                                <td class="text-center"><input type="checkbox" name="apProductos" id="apProductos"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lechuga</td>
+                                                <td>Kilo</td>
+                                                <td>Hortaliza</td>
+                                                <td><img src="../img/productos/lechuga.png" alt="Imagen de la lechuga" width="50"></td>
+                                                <td class="text-center"><input type="checkbox" name="apProductos" id="apProductos"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Lechuga</td>
+                                                <td>Kilo</td>
+                                                <td>Hortaliza</td>
+                                                <td><img src="../img/productos/lechuga.png" alt="Imagen de la lechuga" width="50"></td>
+                                                <td class="text-center"><input type="checkbox" name="apProductos" id="apProductos"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <input type="hidden" name="apEnviar" value="Asociar" class="btn btn-success pull-right">
+                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalConfirmarAsociarProducto">Asociar Producto(s)</button>
+                                </form>                                
                             </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
+                            <div class="col-md-2">
+                                <div class="well">
+                                    <br><br><br><br><br><br><br>
+                                    <mark class="text-center">Espacio para publicidad</mark>
+                                    <br><br><br><br><br><br><br>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3" style="background: gray;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: #286090;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: yellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: blue;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                        </div>                       
                     </div>
                     <!-- Fin de contenedor de contenido especifico -->
 
@@ -315,7 +328,25 @@
                         </div>
                         <!-- Fin de formulario de Contáctenos -->
 
-
+                        <!-- Modal para confirmación de asociar productos -->
+                        <div>
+                            <div class="modal fade bs-example-modal-sm" id="modalConfirmarAsociarProducto" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title text-center" id="myModalLabel">¿Está seguro que desea asociar estos productos?</h4>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <center>
+                                                <button type="button" class="btn btn-success">Sí</button>
+                                                <button type="button" class="btn btn-danger">No</button>                                                
+                                            </center>                                            
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin de modal para confirmación de asociar productos -->
                     </div>
 
                 </div>

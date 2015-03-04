@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
         <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>Farmer's Market</title>
+        <title>Mis Ofertas - Farmer's Market</title>
     </head>
     <body>
         <div class="container">
@@ -48,11 +48,11 @@
 
                     <!-- Menú de navegación -->
                     <ul class="nav nav-pills nav-stacked">
-                        <li role="presentation" class="active text-left"><a href="#">Inicio <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Mis pedidos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Productos <i class="fa fa-shopping-cart "></i></a></li>                        
-                        <li role="presentation" class="text-left"><a href="#">Mis Productos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Catalogo <i class="fa fa-list-alt "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="indexp.jsp">Inicio <i class="fa fa-home "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="asociar-producto.jsp">Asociar Productos <i class="fa fa-arrows-h"></i></a></li>
+                        <li role="presentation" class="text-left"><a href="mis-pedidos.jsp">Mis Pedidos <i class="fa fa-cubes "></i></a></li>                        
+                        <li role="presentation" class="active text-left"><a href="mis-ofertas.jsp">Mis Ofertas <i class="fa fa-cart-arrow-down "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="mis-productos.jsp">Mis Productos <i class="fa fa-list-alt "></i></a></li>
                     </ul>
                     <!-- Fin del menú de navegación -->
 
@@ -120,7 +120,7 @@
                     </ol>
                     <!-- Fin de miga de pan -->
 
-                    <!-- Mensajes de alertas
+                    <!-- Mensajes de alertas -->
                     <div class="alert alert-success" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -145,7 +145,6 @@
                         </button>
                         <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
                     </div>
-                    Fin de Mensajes de alertas -->
 
                     <!-- Contenedor de contenido especifico -->
                     <div class="container-fluid">

@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
         <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>Farmer's Market</title>
+        <title>Cliente - Farmer's Market</title>
     </head>
     <body>
         <div class="container">
@@ -50,8 +50,6 @@
                     <ul class="nav nav-pills nav-stacked">
                         <li role="presentation" class="active text-left"><a href="#">Inicio <i class="fa fa-shopping-cart "></i></a></li>
                         <li role="presentation" class="text-left"><a href="#">Mis pedidos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Productos <i class="fa fa-shopping-cart "></i></a></li>                        
-                        <li role="presentation" class="text-left"><a href="#">Mis Productos <i class="fa fa-shopping-cart "></i></a></li>
                         <li role="presentation" class="text-left"><a href="#">Catalogo <i class="fa fa-list-alt "></i></a></li>
                     </ul>
                     <!-- Fin del menú de navegación -->
@@ -145,70 +143,233 @@
                         </button>
                         <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
                     </div>
-                    Fin de Mensajes de alertas -->
+                    Fin mensajes de alertas -->
 
                     <!-- Contenedor de contenido especifico -->
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="page-header">
+                                <h4 class="text-center lead">Razones por las cuales utilizar Farmer's Market como cliente</h4>
                             </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
+                            <!-- Botonoes de razones -->
+                            <div class="row">                                    
+                                <div class="col-md-3">
+                                    <!-- Razón número 1 -->
+                                    <center>
+                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#razonUno" aria-expanded="false" aria-controls="collapseExample">
+                                            Mas cerca de tu hogar
+                                        </button>
+                                    </center>                                    
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- Razón número 1 -->
+                                    <center>
+                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#razonDos" aria-expanded="false" aria-controls="collapseExample">
+                                            Confianza
+                                        </button>
+                                    </center>                                    
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- Razón número 1 -->
+                                    <center>
+                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#razonTres" aria-expanded="false" aria-controls="collapseExample">
+                                            Calidad
+                                        </button>
+                                    </center>                                    
+                                </div>
+                                <div class="col-md-3">
+                                    <!-- Razón número 1 -->
+                                    <center>
+                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#razonCuatro" aria-expanded="false" aria-controls="collapseExample">
+                                            Comodidad
+                                        </button>
+                                    </center>                                    
+                                </div>
                             </div>
-                        </div>
+                            <!-- Fin  de botonoes de razones -->
+                            <hr>
+                            <!-- Mensajes de botonoes de razones -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="collapse" id="razonUno">
+                                        <div class="well">
+                                            <div class="media">
+                                                <div class="media-right">
+                                                    <img class="img-thumbnail" src="../img/productos/0007591428L-849x565-660x439-630x400.jpg" alt="...">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h1 class="text-center">Mas cerca de tu hogar</h1>
+                                                    <p class="lead text-justify">
+                                                        Más cerca de tu casa Encuentra las mejores frutas y 
+                                                        verduras en nuestro catálogo" Todo lo mejor del 
+                                                        campo a un solo click, y con los mejores precios
+                                                    </p>                                                    
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Fin de razón número 1 -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="collapse" id="razonDos">
+                                        <div class="well">
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <h1 class="text-center">Mas cerca de tu hogar</h1>
+                                                    <p class="lead text-justify">
+                                                        Más cerca de tu casa Encuentra las mejores frutas y 
+                                                        verduras en nuestro catálogo" Todo lo mejor del 
+                                                        campo a un solo click, y con los mejores precios
+                                                    </p>                                                    
+                                                </div>
+                                                <div class="media-right">
+                                                    <img class="img-thumbnail" src="../img/productos/0007591428L-849x565-660x439-630x400.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Fin de razón número 1 -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="collapse" id="razonTres">
+                                        <div class="well">
+                                            <div class="media">
+                                                <div class="media-right">
+                                                    <img class="img-thumbnail" src="../img/productos/0007591428L-849x565-660x439-630x400.jpg" alt="...">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h1 class="text-center">Mas cerca de tu hogar</h1>
+                                                    <p class="lead text-justify">
+                                                        Más cerca de tu casa Encuentra las mejores frutas y 
+                                                        verduras en nuestro catálogo" Todo lo mejor del 
+                                                        campo a un solo click, y con los mejores precios
+                                                    </p>                                                    
+                                                </div>                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Fin de razón número 1 -->
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="collapse" id="razonCuatro">
+                                        <div class="well">
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <h1 class="text-center">Mas cerca de tu hogar</h1>
+                                                    <p class="lead text-justify">
+                                                        Más cerca de tu casa Encuentra las mejores frutas y 
+                                                        verduras en nuestro catálogo" Todo lo mejor del 
+                                                        campo a un solo click, y con los mejores precios
+                                                    </p>                                                    
+                                                </div>
+                                                <div class="media-right">
+                                                    <img class="img-thumbnail" src="../img/productos/0007591428L-849x565-660x439-630x400.jpg" alt="...">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                        
+                                </div>
+                            </div>
+                        </div>                           
+                    </div>                        
 
-                        <div class="row">
-                            <div class="col-md-3" style="background: gray;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: #286090;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: yellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: blue;">
-                                <br><br><br><br><br><br><br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="../img/publicidad.jpg" alt="..." class="img-thumbnail">
+                        </div>
+                        <div class="page-header">
+                            <h1 class="text-center lead">Nuevas Ofertas <i class="fa fa-openid fa-2x"></i></h1>
+                        </div>                        
+                        <div class="col-md-3">                            
+                            <div class="row">                                
+                                <div class="col-md-12">
+                                    <div class="thumbnail">
+                                        <img src="../img/descarga.svg" alt="...">
+                                        <div class="caption">
+                                            <h3>Thumbnail label</h3>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="thumbnail">
+                                        <img src="../img/descarga.svg" alt="...">
+                                        <div class="caption">
+                                            <h3>Thumbnail label</h3>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-8" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="thumbnail">
+                                        <img src="../img/descarga.svg" alt="...">
+                                        <div class="caption">
+                                            <h3>Thumbnail label</h3>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
+                    </div>
+                    <div class="row">                          
+                        <div class="col-md-3">
+                            <div class="row">                                
+                                <div class="col-md-12">
+                                    <div class="thumbnail">
+                                        <img src="../img/descarga.svg" alt="...">
+                                        <div class="caption">
+                                            <h3>Thumbnail label</h3>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                        </div>                       
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="thumbnail">
+                                        <img src="../img/descarga.svg" alt="...">
+                                        <div class="caption">
+                                            <h3>Thumbnail label</h3>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="thumbnail">
+                                        <img src="../img/descarga.svg" alt="...">
+                                        <div class="caption">
+                                            <h3>Thumbnail label</h3>
+                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <img src="../img/publicidad.jpg" alt="..." class="img-thumbnail">
+                        </div>
                     </div>
                     <!-- Fin de contenedor de contenido especifico -->
 

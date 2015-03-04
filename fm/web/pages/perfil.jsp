@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
         <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>Farmer's Market</title>
+        <title>Mi Perfil - Farmer's Market</title>
     </head>
     <body>
         <div class="container">
@@ -114,9 +114,8 @@
 
                     <!-- Miga de pan -->
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
+                        <li><a href="#">Inicio</a></li>                        
+                        <li class="active"><a href="perfil.jsp"></a>Perfil</li>
                     </ol>
                     <!-- Fin de miga de pan -->
 
@@ -145,70 +144,79 @@
                         </button>
                         <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
                     </div>
-                    Fin de Mensajes de alertas -->
+                    Fin de mensajes de alertas -->
 
                     <!-- Contenedor de contenido especifico -->
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
+                            <div class="col-md-8">
+                                <div class="container-fluid">
+                                    <form class="form-horizontal">
+                                        <legend class="text-center">Mis Datos Personales</legend>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="auDocumento" class="col-sm-4 control-label">Documento</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="auDocumento" class="form-control" 
+                                                           id="auDocumento" placeholder="Documento">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="auNombres" class="col-sm-4 control-label">Nombres</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="auNombres" class="form-control" 
+                                                           id="auNombres" placeholder="Sus nombres">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="auApellidos" class="col-sm-4 control-label">Apellidos</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="auApellidos" class="form-control" 
+                                                           id="auApellidos" placeholder="Sus apellidos">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group has-feedback has-error">
+                                                <label for="auCorreo" class="col-sm-4 control-label">Correo</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="auCorreo" class="form-control" 
+                                                           id="auCorreo" placeholder="Correo electrónico">
+                                                    <i class="glyphicon glyphicon-remove form-control-feedback"></i>
+                                                </div>
+                                            </div>
+                                            <div class="form-group has-feedback has-success">
+                                                <label for="auDireccion" class="col-sm-4 control-label">Dirección</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="auDireccion" class="form-control" 
+                                                           id="auDireccion" placeholder="Dirección">
+                                                    <!-- Al momento de validar, se le manda la class a la i para agregar icon-->
+                                                    <i class="glyphicon glyphicon-ok form-control-feedback"></i>
+                                                </div>
+                                            </div>
+                                            <div class="form-group has-feedback has-warning">
+                                                <label for="auCiudad" class="col-sm-4 control-label">Ciudad</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="auCiudad" class="form-control" 
+                                                           id="auCiudad" placeholder="Su ubicación">
+                                                    <!-- Al momento de validar, se le manda la class a la i para agregar icon-->
+                                                    <i class="glyphicon glyphicon-exclamation-sign form-control-feedback"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <center>
+                                            <input type="button" data-toggle="modal" data-target="#modalConfirmarActualizar" class="btn btn-success" value="Actualizar Datos">
+                                        </center>                                        
+                                    </form>
+                                </div>
                             </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
+                            <div class="col-md-4">
+                                <h4 class="text-center">Kennit Romero</h4>
+                                <div class="container-fluid">
+                                    <img src="../img/avatars/avatar.png" alt="..." class="img-thumbnail">
+                                </div>                                
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3" style="background: gray;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: #286090;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: yellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: blue;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                        </div>                       
+                        </div>                              
                     </div>
                     <!-- Fin de contenedor de contenido especifico -->
 
@@ -314,6 +322,22 @@
                             </div>
                         </div>
                         <!-- Fin de formulario de Contáctenos -->
+
+                        <!-- Confirmación para actualizar datos -->
+                        <div class="modal fade bs-example-modal-sm" id="modalConfirmarActualizar" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p class="text-center lead">¿Está seguro que desea modificar sus datos?</p>
+                                        <center>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-success">Actualizar Datos</button>
+                                        </center>                                        
+                                    </div>                                                                                                               
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin de confirmación para actualiazar datos -->
 
 
                     </div>

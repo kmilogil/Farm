@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
         <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>Farmer's Market</title>
+        <title>Productor - Farmer's Market</title>
     </head>
     <body>
         <div class="container">
@@ -48,11 +48,11 @@
 
                     <!-- Menú de navegación -->
                     <ul class="nav nav-pills nav-stacked">
-                        <li role="presentation" class="active text-left"><a href="#">Inicio <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Mis pedidos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Productos <i class="fa fa-shopping-cart "></i></a></li>                        
-                        <li role="presentation" class="text-left"><a href="#">Mis Productos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Catalogo <i class="fa fa-list-alt "></i></a></li>
+                        <li role="presentation" class="active text-left"><a href="indexp.jsp">Inicio <i class="fa fa-home "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="asociar-producto.jsp">Asociar Productos <i class="fa fa-arrows-h"></i></a></li>
+                        <li role="presentation" class="text-left"><a href="mis-pedidos.jsp">Mis Pedidos <i class="fa fa-cubes "></i></a></li>                        
+                        <li role="presentation" class="text-left"><a href="mis-ofertas.jsp">Mis Ofertas <i class="fa fa-cart-arrow-down "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="mis-productos.jsp">Mis Productos <i class="fa fa-list-alt "></i></a></li>
                     </ul>
                     <!-- Fin del menú de navegación -->
 
@@ -114,13 +114,11 @@
 
                     <!-- Miga de pan -->
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
+                        <li class="active"><a href="#">Inicio</a></li>
                     </ol>
                     <!-- Fin de miga de pan -->
 
-                    <!-- Mensajes de alertas
+                    <!-- Mensajes de alertas 
                     <div class="alert alert-success" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -145,74 +143,88 @@
                         </button>
                         <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
                     </div>
-                    Fin de Mensajes de alertas -->
+                    Fin de mensajes de alertas -->
 
                     <!-- Contenedor de contenido especifico -->
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
+                            <div class="col-md-6">
+                                <div class="page-header">
+                                    <h3 class="text-center">Stock de productos</h3>
+                                </div>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Cantidad</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cebolla</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 91%">91%</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Papa</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">45%</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <!-- Imagen de productos destacados -->
+                                    <center>
+                                        <img src="../img/mas-vendidp.gif" alt="Prooductos destacados">
+                                    </center>                                    
+                                    <!-- Fin de imagen de productos destacados -->
+                                    <br>
+                                    <div class="col-md-6">                                        
+                                        <div class="thumbnail">
+                                            <img src="../img/descarga.svg" alt="...">
+                                            <div class="caption">
+                                                <h3>Thumbnail label</h3>
+                                                <p>
+                                                    Cras justo odio, dapibus ac 
+                                                    facilisis in, egestas eget quam. 
+                                                    Donec id elit non mi porta gravida at 
+                                                    eget metus. Nullam id dolor id nibh 
+                                                    ultricies vehicula ut id elit.
+                                                </p>
+                                                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="thumbnail">
+                                            <img src="../img/descarga.svg" alt="...">
+                                            <div class="caption">
+                                                <h3>Thumbnail label</h3>
+                                                <p>
+                                                    Cras justo odio, dapibus ac 
+                                                    facilisis in, egestas eget quam. 
+                                                    Donec id elit non mi porta gravida at 
+                                                    eget metus. Nullam id dolor id nibh 
+                                                    ultricies vehicula ut id elit.
+                                                </p>
+                                                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3" style="background: gray;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: #286090;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: yellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: blue;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                        </div>                       
+                        </div>                        
                     </div>
                     <!-- Fin de contenedor de contenido especifico -->
-
-
+                    
                     <!-- Ventanas Modales -->
                     <div class="container-fluid">
                         <!-- Cambiar Contraseña -->

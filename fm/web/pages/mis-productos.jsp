@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
         <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>Farmer's Market</title>
+        <title>Mis Ofertas - Farmer's Market</title>
     </head>
     <body>
         <div class="container">
@@ -48,11 +48,11 @@
 
                     <!-- Menú de navegación -->
                     <ul class="nav nav-pills nav-stacked">
-                        <li role="presentation" class="active text-left"><a href="#">Inicio <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Mis pedidos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Productos <i class="fa fa-shopping-cart "></i></a></li>                        
-                        <li role="presentation" class="text-left"><a href="#">Mis Productos <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="#">Catalogo <i class="fa fa-list-alt "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="indexp.jsp">Inicio <i class="fa fa-home "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="asociar-producto.jsp">Asociar Productos <i class="fa fa-arrows-h"></i></a></li>
+                        <li role="presentation" class="text-left"><a href="mis-pedidos.jsp">Mis Pedidos <i class="fa fa-cubes "></i></a></li>                        
+                        <li role="presentation" class="text-left"><a href="mis-ofertas.jsp">Mis Ofertas <i class="fa fa-cart-arrow-down "></i></a></li>
+                        <li role="presentation" class="active text-left"><a href="mis-productos.jsp">Mis Productos <i class="fa fa-list-alt "></i></a></li>
                     </ul>
                     <!-- Fin del menú de navegación -->
 
@@ -114,9 +114,8 @@
 
                     <!-- Miga de pan -->
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
+                        <li><a href="indexp.jsp">Inicio</a></li>
+                        <li class="active"><a href="mis-productos.jsp">Mis Productos (Asociados)</a></li>
                     </ol>
                     <!-- Fin de miga de pan -->
 
@@ -150,65 +149,181 @@
                     <!-- Contenedor de contenido especifico -->
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
+                            <div class="page-header">
+                                <h3 class="text-center">Lista de mis productos asociados</h3>
                             </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
+                            <div class="col-md-6">                                
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" data-toggle="modal" data-target="#modalOfertarProducto" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-8" style="background: green;">
-                                <br><br><br><br><br><br><br>
+                            <div class="col-md-6">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="media">
+                                    <div class="media-left">
+                                        <a href="#">
+                                            <img class="media-object" src="../img/productos/lechuga.png" alt="Producto mío, lechuga" width="200">
+                                        </a>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Lechuga</h4>
+                                        <p><strong>Presentación: </strong> Kilo</p>
+                                        <p><strong>Categoria: </strong> Hortaliza</p>
+                                        <a href="#" class="btn btn-success">Ofertar</a>
+                                    </div>
+                                </div>
+                                <hr>                                
                             </div>
-                            <div class="col-md-4" style="background: greenyellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-3" style="background: gray;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: #286090;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: yellow;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                            <div class="col-md-3" style="background: blue;">
-                                <br><br><br><br><br><br><br>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-1" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-4" style="border: black 1px solid"><br><br><br></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                            <div class="col-md-6" style="border: black 1px solid"><br><br><br></div>
-                        </div>                       
+                        </div>                        
                     </div>
                     <!-- Fin de contenedor de contenido especifico -->
 
@@ -268,7 +383,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
 
                         <!-- Formulario de Contáctenos -->
                         <div>
@@ -314,10 +429,62 @@
                             </div>
                         </div>
                         <!-- Fin de formulario de Contáctenos -->
-
-
+                        <div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="modalOfertarProducto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h3 class="modal-title text-center" id="myModalLabel">Ofertar Producto</h3>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="form-horizontal">
+                                                <div class="form-group">
+                                                    <label for="inputEmail3" class="col-sm-3 control-label">Producto:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-3 control-label">Categoria:</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-3 control-label">Presentación:</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option>Kilo</option>
+                                                            <option>Kilo</option>
+                                                            <option>Kilo</option>
+                                                            <option>Kilo</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="inputPassword3" class="col-sm-3 control-label">Novedad:</label>
+                                                    <div class="col-sm-9">
+                                                        <select class="form-control">
+                                                            <option>Kilo</option>
+                                                            <option>Kilo</option>
+                                                            <option>Kilo</option>
+                                                            <option>Kilo</option>
+                                                        </select>
+                                                    </div>
+                                                </div>                                                                                                
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                            <button type="button" class="btn btn-success">Publicar Oferta</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
                 <!-- Contenedor de Segundo-->
             </div>

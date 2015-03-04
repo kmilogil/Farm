@@ -21,12 +21,12 @@
             <!-- Banner Farmer's Market -->
             <div class="row">
                 <div class="col-md-12">
-                    <img src="img/banner.jpg" alt="Banner de Farmer's Market" width="1000px">
+                    <img src="img/banner.jpg" alt="Banner de Farmer's Market">
                 </div>
             </div>
             <!-- Fin del Banner  -->
 
-            <!-- Mensajes de alertas -->
+            <!-- Mensajes de alertas
             <div class="alert alert-success" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -51,6 +51,7 @@
                 </button>
                 <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
             </div>
+            Fin de mensajes de alertas -->
 
             <!-- Contenedor principal -->
             <div class="row">
@@ -92,11 +93,11 @@
                         <!-- Controles -->
                         <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
+                            <span class="sr-only">Anterior</span>
                         </a>
                         <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
                             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
+                            <span class="sr-only">S</span>
                         </a>
                         <!-- Fin de controles -->
                     </div>
@@ -119,7 +120,7 @@
                             que se ven en la cadena de comercialización agricola que se
                             vive en Colombia.
                         </p>
-                        
+
                         <p class="text-center text-success">
                             <mark>¿Quieres hacerte parte de la comunidad?<br> ¿Qué estás esperando?</mark>
                         </p>
@@ -151,7 +152,7 @@
             <div class="container">
                 <!-- Ventana Modal para Registrárse -->
                 <div class="row">
-                    <!-- Inicio de Ventana Modal Larga -->
+                    <!-- Inicio de Ventana Modal Registro de usuarios -->
                     <div class="modal fade bs-example-modal-lg" id="modalRegistrarse" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <!-- La ventana en Sí -->
                         <div class="modal-dialog modal-lg">
@@ -353,6 +354,51 @@
                     </div>
                 </div>
                 <!-- Fin de ventana Modal para recuperar Contraseña -->
+
+                <!-- Formulario de Contáctenos -->
+                <div>
+                    <div class="modal fade" id="modalContactenos" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title text-center" id="myModalLabel">Contáctenos | Farmer's Market</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="mcNombre" class="col-sm-2 control-label">Nombre</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="mcNombre"
+                                                       id="mcNombre" placeholder="Ingrese su nombre">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="mcCorreo" class="col-sm-2 control-label">Correo</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" name="mcCorreo"
+                                                       id="mcCorreo" placeholder="Ingrese su correo electrónico">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="inputPassword3" class="col-sm-2 control-label">Mensaje</label>
+                                            <div class="col-sm-10">
+                                                <textarea class="form-control" rows="4" placeholder="Ingrese su mensaje para la compañía Farmer's Market"></textarea>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-success">Enviar Mensaje</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin de formulario de Contáctenos -->
             </div>
         </div>
     </body>
