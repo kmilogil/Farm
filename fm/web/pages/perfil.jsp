@@ -168,6 +168,7 @@
                                                            id="auNombres" placeholder="Sus nombres">
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
                                                 <label for="auApellidos" class="col-sm-4 control-label">Apellidos</label>
                                                 <div class="col-sm-8">
@@ -175,8 +176,7 @@
                                                            id="auApellidos" placeholder="Sus apellidos">
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
+
                                             <div class="form-group has-feedback has-error">
                                                 <label for="auCorreo" class="col-sm-4 control-label">Correo</label>
                                                 <div class="col-sm-8">
@@ -185,6 +185,28 @@
                                                     <i class="glyphicon glyphicon-remove form-control-feedback"></i>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group has-feedback has-warning">
+                                                <label for="auCiudad" class="col-sm-4 control-label">Ciudad</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="auCiudad" class="form-control" 
+                                                           id="auCiudad" placeholder="Ciudad">
+                                                    <!-- Al momento de validar, se le manda la class a la i para agregar icon-->
+                                                    <i class="glyphicon glyphicon-exclamation-sign form-control-feedback"></i>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group has-feedback has-warning">
+                                                <label for="auCiudad" class="col-sm-4 control-label">Depart...</label>
+                                                <div class="col-sm-8">
+                                                    <input type="text" name="auCiudad" class="form-control" 
+                                                           id="auCiudad" placeholder="Departamento">
+                                                    <!-- Al momento de validar, se le manda la class a la i para agregar icon-->
+                                                    <i class="glyphicon glyphicon-exclamation-sign form-control-feedback"></i>
+                                                </div>
+                                            </div>
+
                                             <div class="form-group has-feedback has-success">
                                                 <label for="auDireccion" class="col-sm-4 control-label">Dirección</label>
                                                 <div class="col-sm-8">
@@ -194,13 +216,15 @@
                                                     <i class="glyphicon glyphicon-ok form-control-feedback"></i>
                                                 </div>
                                             </div>
-                                            <div class="form-group has-feedback has-warning">
-                                                <label for="auCiudad" class="col-sm-4 control-label">Ciudad</label>
+
+                                            <div class="form-group">
+                                                <label for="auCiudad" class="col-sm-4 control-label">Telefono:</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" name="auCiudad" class="form-control" 
-                                                           id="auCiudad" placeholder="Su ubicación">
-                                                    <!-- Al momento de validar, se le manda la class a la i para agregar icon-->
-                                                    <i class="glyphicon glyphicon-exclamation-sign form-control-feedback"></i>
+                                                    <div class="input-group">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn btn-default" data-toggle="modal" data-target="#modalNumeros" type="button">Ver o agregar números</button>
+                                                        </span>
+                                                    </div><!-- /input-group -->
                                                 </div>
                                             </div>
                                         </div>
@@ -338,6 +362,72 @@
                             </div>
                         </div>
                         <!-- Fin de confirmación para actualiazar datos -->
+
+                        <!-- Modal formulario para los números telefonicos -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalNumeros" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Mis números de telefono</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="col-md-12">
+                                                <form class="form-inline">
+                                                    <legend class="text-center">Registro de telefonos</legend>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName2">Número de Telefono</label>
+                                                        <input type="text" class="form-control" id="exampleInputName2" placeholder="Ingrese su el número de telefono">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-default">Agregar</button>
+                                                </form>
+                                                <br>
+                                                <form class="form-inline">
+                                                    <legend class="text-center">Actualización de telefonos</legend>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputName2">Número de Telefono</label>
+                                                        <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-default">Actualizar</button>
+                                                </form>
+
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">Número</th>
+                                                            <th class="text-center">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="text-center">
+                                                            <td>301 303 3317</td>
+                                                            <td>
+                                                                <a href=""><i class="fa fa-remove"></i> Eliminar</a>&nbsp;
+                                                                <a href=""><i class="fa fa-pencil"></i> Editar</a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="text-center">                                                            
+                                                            <td>322 241 9746</td>                                                            
+                                                            <td>
+                                                                <a href=""><i class="fa fa-remove"></i> Eliminar</a>&nbsp;
+                                                                <a href=""><i class="fa fa-pencil"></i> Editar</a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin de modal para los números telefonicos -->
 
 
                     </div>
