@@ -6,6 +6,11 @@
 package modelo.utilidades;
 
 import java.sql.Connection;
+import java.util.ArrayList;
+import modelo.daos.CiudadDao;
+import modelo.daos.DepartamentoDao;
+import modelo.dtos.CiudadDto;
+import modelo.dtos.DepartamentoDto;
 
 /**
  *
@@ -23,6 +28,29 @@ public class PruebaConexion {
             System.out.println("Error");
         }
         
+        CiudadDao udao = new CiudadDao();
+        
+        ArrayList<CiudadDto> misCiudades;
+        misCiudades = (ArrayList<CiudadDto>) udao.obtenerCiudades();
+        
+        for (CiudadDto p: misCiudades) {
+            System.out.println(p);
+        }                
+        
+        System.out.println(udao.obtenerNombrePorId(23417));
+        
+        System.out.println("-----------------------------------------------");
+        
+        DepartamentoDao ddao = new DepartamentoDao();
+        ArrayList<DepartamentoDto> misDepartamentos;
+        
+        misDepartamentos = (ArrayList<DepartamentoDto>) ddao.obtenerDepartamentos();
+        
+        for (DepartamentoDto p: misDepartamentos) {
+            System.out.println(p);
+        }
+        
+        System.out.println(ddao.obtenerNombrePorId(5));
     }
     
 }

@@ -37,7 +37,7 @@ public class DepartamentoDao {
             while (rs.next()) {
                 DepartamentoDto temp = new DepartamentoDto();
                 temp.setIdDepartamento(rs.getInt("idDepartamento"));
-                temp.setNombre(rs.getString("departamento"));
+                temp.setNombre(rs.getString("Nombre"));
                 departamentos.add(temp);
             }
         } catch (SQLException ex) {
@@ -55,7 +55,7 @@ public class DepartamentoDao {
             rs = pstm.executeQuery();
 
             while (rs.next()) {
-                mensaje = rs.getString("departamento");
+                mensaje = rs.getString("Nombre");
             }
         } catch (SQLException sqle) {
             mensaje = "Error, detalle " + sqle.getMessage();
