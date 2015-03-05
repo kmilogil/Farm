@@ -1,9 +1,8 @@
 package modelo.dtos;
 
-/** 
- * @author Kennit David Ruz Romero
- * Hora de creación: 11:18 a.m.
- * Fecha: 4 de Marzo de 2015
+/**
+ * @author Kennit David Ruz Romero 
+ * Fecha: 4 de de Enero de 2015
  */
 
 public class PermisoRolDto {

@@ -14,12 +14,13 @@ public class UsuarioDto {
     private String direccion = "";
     private int idCiudad = 0;
     private String fechaSistema = "";
+    private String imagen = "";
     private int estado = 0;
 
     @Override
     public String toString() {
-        return "UsuarioDTO{" + "idUsuario=" + idUsuario + ", nombres=" + nombres + ", apellidos=" + apellidos + ", clave=" + clave + ", correo=" + correo + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", idCiudad=" + idCiudad + ", fechaSistema=" + fechaSistema + ", estado=" + estado + '}';
-    }   
+        return "UsuarioDto{" + "idUsuario=" + idUsuario + ", nombres=" + nombres + ", apellidos=" + apellidos + ", clave=" + clave + ", correo=" + correo + ", fechaNacimiento=" + fechaNacimiento + ", direccion=" + direccion + ", idCiudad=" + idCiudad + ", fechaSistema=" + fechaSistema + ", imagen=" + imagen + ", estado=" + estado + '}';
+    }
 
     /**
      * @return the idUsuario
@@ -94,14 +95,14 @@ public class UsuarioDto {
     /**
      * @return the fechaNac
      */
-    public String getFechaNac() {
+    public String getFechaNacimiento() {
         return fechaNacimiento;
     }
 
     /**
      * @param fechaNac the fechaNac to set
      */
-    public void setFechaNac(String fechaNac) {
+    public void setFechaNacimiento(String fechaNac) {
         this.fechaNacimiento = fechaNac;
     }
 
@@ -160,4 +161,18 @@ public class UsuarioDto {
     public void setEstado(int estado) {
         this.estado = estado;
     }        
+
+    /**
+     * @return the imagen
+     */
+    public String getImagen() {
+        return imagen;
+    }
+
+    /**
+     * @param imagen the imagen to set
+     */
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 }
