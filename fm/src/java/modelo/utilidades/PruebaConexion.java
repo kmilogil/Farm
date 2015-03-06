@@ -77,6 +77,10 @@ public class PruebaConexion {
             String salida = realizarRegistro.insertUsuarioProcedimiento(nuevoUsuario, suRol);
             
             System.out.println(salida);
+            
+            System.out.println("----------------------------------");
+            
+            System.out.println(realizarRegistro.validarExistenciaDocumento(64569185));
     }
     
 }

@@ -184,9 +184,12 @@ function validarCorreo(correo) {
             });
         });
         document.getElementById('inpCorreo').setAttribute('class', 'form-group has-feedback has-error');
+        document.getElementById('iconFeedbackCorreo').setAttribute('class', 'glyphicon glyphicon-remove form-control-feedback');
+        document.getElementById('ruCorreo2').setAttribute('disabled');
         document.getElementById('botonRegistro').setAttribute('disabled', 'true');
     } else {
         document.getElementById('ruCorreo').removeAttribute('data-toggle', 'tooltip');
+        document.getElementById('ruCorreo2').removeAttribute('disabled');
         document.getElementById('ruCorreo').removeAttribute('data-original-title', 'El correo no está en un formato correcto, correo@ejemplo.com');
         document.getElementById('inpCorreo').setAttribute('class', 'form-group has-feedback has-success');
         document.getElementById('iconFeedbackCorreo').setAttribute('class', 'glyphicon glyphicon-ok form-control-feedback');
@@ -205,6 +208,7 @@ function validarCorreo2(correo) {
             });
         });
         document.getElementById('inpCorreo2').setAttribute('class', 'form-group has-feedback has-error');
+        document.getElementById('iconFeedbackCorreo2').setAttribute('class', 'glyphicon glyphicon-remove form-control-feedback');
         document.getElementById('btnRecuperar').setAttribute('disabled', 'true');
     } else if (!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(correo.value))) {
         document.getElementById('rpEmail').setAttribute('data-toggle', 'tooltip');

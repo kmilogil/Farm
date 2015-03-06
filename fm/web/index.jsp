@@ -15,6 +15,7 @@
         <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/validaciones.js"></script>
+        <script type="text/javascript" src="js/validacionesAjax.js"></script>
         <title>Inicio | Farmer's Market</title>
     </head>
     <body>
@@ -170,8 +171,8 @@
 
                                                 <div class="form-group has-feedback" id="inpDocumento">
                                                     <label class="control-label" for="ruDocumento">N° de Documento:</label>
-                                                    <input type="text" class="form-control" tabindex="2" name="ruDocumento" onblur="validarDocumento(this)"
-                                                           id="ruDocumento" value="64569185" maxlength="10" required>                                                    
+                                                    <input type="text" class="form-control" tabindex="2" name="ruDocumento"
+                                                           id="ruDocumento" value="64569185" maxlength="10" required onblur="validarUsuarioYaRegistrado(this); validarDocumento(this)">
                                                     <i id="iconFeedbackDocumento"></i>
                                                 </div>                           
 
@@ -191,7 +192,7 @@
 
                                                 <div class="form-group has-feedback" id="inpCorreo">
                                                     <label class="control-label" for="ruCorreo">Correo:</label>
-                                                    <input type="text" class="form-control" name="ruCorreo" tabindex="5" onblur="validarCorreo(this)"
+                                                    <input type="text" class="form-control" name="ruCorreo" tabindex="5" onblur="validarCorreo(this); validaCorreoYaRegistrado(this)"
                                                            id="ruCorreo" value="alyssa-luna@hotmail.com" required>
                                                     <i id="iconFeedbackCorreo"></i>
                                                 </div>

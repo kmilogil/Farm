@@ -150,5 +150,43 @@ public class UsuarioDao {
             mensaje = "Error, detalle " + sqle.getMessage();
         }
         return mensaje;
-    }    
+    }
+    
+    public StringBuilder validarExistenciaDocumento(long idUsuario) {
+        StringBuilder salidaValidar = new StringBuilder("");
+        sqlTemp = "SELECT `idUsuario` FROM `usuarios` WHERE `idUsuario` = ?";
+        try {
+            pstm = miCon.prepareStatement(sqlTemp);
+            pstm.setLong(1, idUsuario);
+            rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                salidaValidar.append("existe");
+            } else {
+                salidaValidar.append("noexiste");
+            }
+        } catch (SQLException ex) {
+            mensaje = "Error, detalle: " + ex.getMessage();
+        }
+        return salidaValidar;
+    }
+    
+    public StringBuilder validarExistenciaCorreo(String correo) {
+        StringBuilder salidaValidar = new StringBuilder("");
+        sqlTemp = "SELECT `Correo` FROM `usuarios` WHERE `Correo` = ?";
+        try {
+            pstm = miCon.prepareStatement(sqlTemp);
+            pstm.setString(1, correo);
+            rs = pstm.executeQuery();
+
+            if (rs.next()) {
+                salidaValidar.append("existe");
+            } else {
+                salidaValidar.append("noexiste");
+            }
+        } catch (SQLException ex) {
+            mensaje = "Error, detalle: " + ex.getMessage();
+        }
+        return salidaValidar;
+    }
 }
