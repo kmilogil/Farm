@@ -9,8 +9,11 @@ import java.sql.Connection;
 import java.util.ArrayList;
 import modelo.daos.CiudadDao;
 import modelo.daos.DepartamentoDao;
+import modelo.daos.UsuarioDao;
 import modelo.dtos.CiudadDto;
 import modelo.dtos.DepartamentoDto;
+import modelo.dtos.RolDto;
+import modelo.dtos.UsuarioDto;
 
 /**
  *
@@ -51,6 +54,29 @@ public class PruebaConexion {
         }
         
         System.out.println(ddao.obtenerNombrePorId(5));
+        
+        
+        System.out.println("----------------------------------");
+        
+        RolDto suRol = new RolDto();
+            suRol.setIdRol(1);
+            
+            UsuarioDto nuevoUsuario = new UsuarioDto();
+            nuevoUsuario.setIdUsuario(64569185);
+            nuevoUsuario.setNombres("Alyson");
+            nuevoUsuario.setApellidos("Romero Oviedo");
+            nuevoUsuario.setClave("mark42");
+            nuevoUsuario.setCorreo("alyssa-luna@hotmail.com");
+            nuevoUsuario.setFechaNacimiento(null);
+            nuevoUsuario.setDireccion("Carrera 19 Bis 8 - 19");
+            nuevoUsuario.setIdCiudad(70001);
+            nuevoUsuario.setImagen(null);
+            nuevoUsuario.setEstado(1);
+            
+            UsuarioDao realizarRegistro = new UsuarioDao();
+            String salida = realizarRegistro.insertUsuarioProcedimiento(nuevoUsuario, suRol);
+            
+            System.out.println(salida);
     }
     
 }

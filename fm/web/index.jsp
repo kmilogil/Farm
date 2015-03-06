@@ -14,6 +14,7 @@
         <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
         <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/validaciones.js"></script>
         <title>Inicio | Farmer's Market</title>
     </head>
     <body>
@@ -24,34 +25,22 @@
                     <img src="img/banner.jpg" alt="Banner de Farmer's Market">
                 </div>
             </div>
-            <!-- Fin del Banner  -->
+            <!-- Fin del Banner  -->            
 
-            <!-- Mensajes de alertas
-            <div class="alert alert-success" role="alert">
+            <!-- Mensajes de alertas -->
+            <%
+                if (request.getParameter("msg") != null && request.getParameter("tipoAlert") != null) {
+            %>
+            <div class="alert alert-<%= request.getParameter("tipoAlert")%>" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
+                <p class="text-center"><%= request.getParameter("msg")%></p>
             </div>
-            <div class="alert alert-info" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
-            </div>
-            <div class="alert alert-warning" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
-            </div>
-            <div class="alert alert-danger" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
-            </div>
-            Fin de mensajes de alertas -->
+            <%
+                }
+            %>            
+            <!-- Fin de mensajes de alertas -->
 
             <!-- Contenedor principal -->
             <div class="row">
@@ -168,82 +157,90 @@
                                 <!-- Contenedor del formulario de registro -->
                                 <div class="container-fluid">
                                     <div class="col-md-12">
-                                        <form>
+                                        <form method="POST" action="GestionUsuarios">
                                             <div class="col-md-6">
-                                                <div class="form-group" id="inpRol">
+                                                <div class="form-group has-feedback" id="inpRol">
                                                     <label for="ruRol" class="control-label">Yo soy:</label>
-                                                    <select name="ruRol" id="ruRol" class="form-control" tabindex="1" autofocus onblur="validarSeleccionRol(this);">
-                                                        <option value="">Seleccione un rol</option>
+                                                    <select name="ruRol" id="ruRol" class="form-control" tabindex="1" required autofocus onblur="validarSeleccionRol(this)">
+                                                        <option value="0">Seleccione un rol</option>
                                                         <option value="1">Cliente</option>
-                                                        <option value="2">Productor</option>
+                                                        <option value="2">Productor</option>                                                        
                                                     </select>
                                                 </div>
 
-                                                <div class="form-group" id="inpDocumento">
+                                                <div class="form-group has-feedback" id="inpDocumento">
                                                     <label class="control-label" for="ruDocumento">N° de Documento:</label>
-                                                    <input type="text" class="form-control" tabindex="2" name="ruDocumento"
-                                                           id="ruDocumento" value="" maxlength="10">
+                                                    <input type="text" class="form-control" tabindex="2" name="ruDocumento" onblur="validarDocumento(this)"
+                                                           id="ruDocumento" value="64569185" maxlength="10" required>                                                    
+                                                    <i id="iconFeedbackDocumento"></i>
                                                 </div>                           
 
-                                                <div class="form-group" id="inpNombres">
+                                                <div class="form-group has-feedback" id="inpNombres">
                                                     <label class="control-label" for="ruNombres">Nombres:</label>
-                                                    <input type="text" class="form-control" name="ruNombres" maxlength="30"
-                                                           id="ruNombres" tabindex="3" value="">
+                                                    <input type="text" class="form-control" name="ruNombres" maxlength="30" onblur="validarNombres(this);"
+                                                           id="ruNombres" tabindex="3" value="Alyson" required>
+                                                    <i id="iconFeedbackNombres"></i>
                                                 </div>
 
-                                                <div class="form-group" id="inpApellidos">
+                                                <div class="form-group has-feedback" id="inpApellidos">
                                                     <label class="control-label" for="ruApellidos">Apellidos:</label>
                                                     <input type="text" class="form-control" name="ruApellidos" maxlength="30"
-                                                           id="ruApellidos" tabindex="4" value="">
+                                                           id="ruApellidos" tabindex="4" value="Romero Oviedo" onblur="validarApellidos(this)" required>
+                                                    <i id="iconFeedbackApellidos"></i>
                                                 </div>
 
-                                                <div class="form-group" id="inpCorreo">
+                                                <div class="form-group has-feedback" id="inpCorreo">
                                                     <label class="control-label" for="ruCorreo">Correo:</label>
-                                                    <input type="text" class="form-control" name="ruCorreo" tabindex="5"
-                                                           id="ruCorreo" value="">
+                                                    <input type="text" class="form-control" name="ruCorreo" tabindex="5" onblur="validarCorreo(this)"
+                                                           id="ruCorreo" value="alyssa-luna@hotmail.com" required>
+                                                    <i id="iconFeedbackCorreo"></i>
                                                 </div>
 
-                                                <div class="form-group" id="inpCorreoRepetido">
+                                                <div class="form-group has-feedback" id="inpCorreoRepetido">
                                                     <label class="control-label" for="ruCorreo2">Repetir Correo:</label>
-                                                    <input type="text" class="form-control" name="ruCorreo2" tabindex="6"
-                                                           id="ruCorreo2">
+                                                    <input type="text" class="form-control" name="ruCorreo2" tabindex="6" onblur="validarRepetirCorreo(this)"
+                                                           id="ruCorreo2" required>
+                                                    <i id="iconFeedbackCorreo2"></i>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6">
-                                                <div class="form-group" id="inpDireccion">
+                                                <div class="form-group has-feedback" id="inpDireccion">
                                                     <label class="control-label" for="ruDireccion">Dirección:</label>
                                                     <input type="text" class="form-control" name="ruDireccion" 
-                                                           id="ruDireccion" tabindex="7" value="">
+                                                           id="ruDireccion" tabindex="7" value="Carrera 19 Bis 8 - 19" onblur="validarDireccion(this)" required>
+                                                    <i id="iconFeedbackDireccion"></i>
                                                 </div>
 
-                                                <div class="form-group" id="inpCiudad">
-                                                    <label class="control-label" for="ruCiudad">Departamento:</label>
-                                                    <select name="ruCiudad" id="ruCiudad" class="form-control" tabindex="7">
+                                                <div class="form-group has-feedback" id="inpDepartamento">
+                                                    <label class="control-label" for="ruDepartamento">Departamento:</label>
+                                                    <select name="ruDepartamento" id="ruDepartamento" class="form-control" tabindex="7" onblur="validarCiudad(this)" required>
                                                         <option value="">Seleccione un departamento</option>                                                                                                       
-                                                        <option value=""></option>                                    
+                                                        <option value=""></option>
                                                     </select>
                                                 </div>
 
-                                                <div class="form-group" id="inpCiudad">
+                                                <div class="form-group has-feedback" id="inpCiudad">
                                                     <label class="control-label" for="ruCiudad">Ciudad:</label>
-                                                    <select name="ruCiudad" id="ruCiudad" class="form-control" tabindex="7">
+                                                    <select name="ruCiudad" id="ruCiudad" class="form-control" tabindex="7" onblur="validarCiudad(this)" required>
                                                         <option value="">Seleccione una ciudad</option>                                                                                                       
-                                                        <option value=""></option>                                    
+                                                        <option value="70001">Sincelejo</option>                                    
                                                     </select>
                                                 </div>
-
-                                                <div class="form-group" id="inpClave">
+                                                
+                                                <div class="form-group has-feedback" id="inpClave">
                                                     <label class="control-label" for="ruClave">Contraseña:</label>
-                                                    <input type="password" class="form-control" name="ruClave" id="ruClave" tabindex="8">
+                                                    <input type="password" class="form-control" value="mark42" name="ruClave" id="ruClave" tabindex="8" required onblur="validarClave(this)">
+                                                    <i id="iconFeedbackClave"></i>
                                                 </div>
 
-                                                <div class="form-group" id="inpCaptcha">
+                                                <div class="form-group has-feedback" id="inpCaptcha">
                                                     <label class="control-label" for="answer"><img src="ocaptcha"/></label>
-                                                    <input type="text" name="answer" id="answer" class="form-control" placeholder="Ingrese los caracteres de la figura" tabindex="9">
+                                                    <input type="text" name="answer" id="answer" class="form-control" 
+                                                           placeholder="Ingrese los caracteres de la figura" tabindex="9" required onblur="validarCaptcha(this)">                                                    
                                                 </div>
 
-                                                <div class="checkbox">
+                                                <div class="checkbox has-feedback">
                                                     <label class="control-label">
                                                         <input required type="checkbox"> Acepto <a href="" data-toggle="modal" data-target="#modalTerminos">Terminos y Condiciones</a>
                                                     </label>

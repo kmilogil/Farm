@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import modelo.dtos.RolDto;
 import modelo.dtos.UsuarioDto;
 import modelo.utilidades.Conexion;
 
@@ -27,11 +28,9 @@ public class UsuarioDao {
         miCon = Conexion.getInstance();
     }
     
-    public String insertUsuarioProcedimiento(UsuarioDto nuevoUsuario) {
+    public String insertUsuarioProcedimiento(UsuarioDto nuevoUsuario, RolDto suRol) {
         try {
-            String sqlInsert = "INSERT INTO `usuarios`(`idUsuario`, `Nombres`, "
-                    + "`Apellidos`, `Clave`, `Correo`, `FechaNacimiento`, `Direccion`, "
-                    + "`idCiudad`, `FechaSistema`, `Imagen` `Estado`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, now(), ?, ?)";
+            String sqlInsert = "CALL ProceRegistrarUsuarioCompleto(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             pstm = miCon.prepareStatement(sqlInsert);
             
             pstm.setLong(1, nuevoUsuario.getIdUsuario());
@@ -44,6 +43,7 @@ public class UsuarioDao {
             pstm.setInt(8, nuevoUsuario.getIdCiudad());
             pstm.setString(9, nuevoUsuario.getImagen());
             pstm.setInt(10, nuevoUsuario.getEstado());
+            pstm.setInt(11, suRol.getIdRol());
             
             rtdo = pstm.executeUpdate();
 
