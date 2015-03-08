@@ -34,7 +34,7 @@ public class PruebaConexion {
         CiudadDao udao = new CiudadDao();
         
         ArrayList<CiudadDto> misCiudades;
-        misCiudades = (ArrayList<CiudadDto>) udao.obtenerCiudades();
+        misCiudades = (ArrayList<CiudadDto>) udao.obtenerCiudadesPorId(7);
         
         for (CiudadDto p: misCiudades) {
             System.out.println(p);
@@ -53,7 +53,7 @@ public class PruebaConexion {
             System.out.println(p);
         }
         
-        System.out.println(ddao.obtenerNombrePorId(5));
+        System.out.println(ddao.obtenerNombrePorId(85));
         
         
         System.out.println("----------------------------------");

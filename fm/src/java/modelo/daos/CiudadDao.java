@@ -26,11 +26,12 @@ public class CiudadDao {
         miCon = Conexion.getInstance();
     }
 
-    public List obtenerCiudades() {
+    public List obtenerCiudadesPorId(int idDepartamento) {
         ArrayList<CiudadDto> ciudades = null;
-        sqlTemp = "SELECT `idCiudad`, `Nombre`, `idDepartamento` FROM `ciudades`";
+        sqlTemp = "SELECT `idCiudad`, `Nombre`, `idDepartamento` FROM `ciudades` WHERE idDepartamento = ? ORDER BY `Nombre`";
         try {
             pstm = miCon.prepareStatement(sqlTemp);
+            pstm.setInt(1, idDepartamento);
             rs = pstm.executeQuery();
 
             ciudades = new ArrayList();

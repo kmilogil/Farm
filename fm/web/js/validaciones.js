@@ -305,10 +305,30 @@ function validarDepartamento(departamento) {
     }
 }
 
+function validarDepartamento(departamento) {
+    if (departamento.value === null || departamento.value === "") {
+        document.getElementById('ruDepartamento').setAttribute('data-toggle', 'tooltip');
+        document.getElementById('ruDepartamento').setAttribute('data-original-title', 'Debe seleccionar un departamento');
+        $(document).ready(function () {
+            // Initialize tooltip
+            $('[data-toggle="tooltip"]').tooltip({
+                placement: 'top'
+            });
+        });
+        document.getElementById('inpDepartamento').setAttribute('class', 'form-group has-feedback has-error');        
+        document.getElementById('botonRegistro').setAttribute('disabled', 'true');
+    } else {
+        document.getElementById('ruDepartamento').removeAttribute('data-toggle', 'tooltip');
+        document.getElementById('ruDepartamento').removeAttribute('data-original-title');
+        document.getElementById('inpDepartamento').setAttribute('class', 'form-group has-feedback has-success');
+        document.getElementById('botonRegistro').removeAttribute('disabled');
+    }
+}
+
 function validarCiudad(ciudad) {
     if (ciudad.value === null || ciudad.value === "") {
         document.getElementById('ruCiudad').setAttribute('data-toggle', 'tooltip');
-        document.getElementById('ruCiudad').setAttribute('data-original-title', 'Debe seleccionar una ciudad antes');
+        document.getElementById('ruCiudad').setAttribute('data-original-title', 'Debe seleccionar un departamento antes');
         $(document).ready(function () {
             // Initialize tooltip
             $('[data-toggle="tooltip"]').tooltip({

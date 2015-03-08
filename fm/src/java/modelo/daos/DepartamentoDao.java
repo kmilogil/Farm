@@ -28,7 +28,7 @@ public class DepartamentoDao {
 
     public List obtenerDepartamentos() {
         ArrayList<DepartamentoDto> departamentos = null;
-        sqlTemp = "SELECT `idDepartamento`, `Nombre` FROM `departamentos`";
+        sqlTemp = "SELECT `idDepartamento`, `Nombre` FROM `departamentos` ORDER BY `Nombre`";
         try {
             pstm = miCon.prepareStatement(sqlTemp);
             rs = pstm.executeQuery();

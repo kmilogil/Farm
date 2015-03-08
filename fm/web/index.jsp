@@ -4,6 +4,9 @@
     Author     : kennross
 --%>
 
+<%@page import="modelo.dtos.DepartamentoDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.daos.DepartamentoDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,6 +19,7 @@
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/validaciones.js"></script>
         <script type="text/javascript" src="js/validacionesAjax.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
         <title>Inicio | Farmer's Market</title>
     </head>
     <body>
@@ -172,7 +176,8 @@
                                                 <div class="form-group has-feedback" id="inpDocumento">
                                                     <label class="control-label" for="ruDocumento">N° de Documento:</label>
                                                     <input type="text" class="form-control" tabindex="2" name="ruDocumento"
-                                                           id="ruDocumento" value="64569185" maxlength="10" required onblur="validarUsuarioYaRegistrado(this); validarDocumento(this)">
+                                                           id="ruDocumento" value="64569185" maxlength="10" required onblur="validarUsuarioYaRegistrado(this);
+                                                                   validarDocumento(this)">
                                                     <i id="iconFeedbackDocumento"></i>
                                                 </div>                           
 
@@ -192,7 +197,8 @@
 
                                                 <div class="form-group has-feedback" id="inpCorreo">
                                                     <label class="control-label" for="ruCorreo">Correo:</label>
-                                                    <input type="text" class="form-control" name="ruCorreo" tabindex="5" onblur="validarCorreo(this); validaCorreoYaRegistrado(this)"
+                                                    <input type="text" class="form-control" name="ruCorreo" tabindex="5" onblur="validarCorreo(this);
+                                                            validaCorreoYaRegistrado(this)"
                                                            id="ruCorreo" value="alyssa-luna@hotmail.com" required>
                                                     <i id="iconFeedbackCorreo"></i>
                                                 </div>
@@ -215,20 +221,28 @@
 
                                                 <div class="form-group has-feedback" id="inpDepartamento">
                                                     <label class="control-label" for="ruDepartamento">Departamento:</label>
-                                                    <select name="ruDepartamento" id="ruDepartamento" class="form-control" tabindex="7" onblur="validarCiudad(this)" required>
-                                                        <option value="">Seleccione un departamento</option>                                                                                                       
-                                                        <option value=""></option>
+                                                    <select name="ruDepartamento" id="ruDepartamento" class="form-control" tabindex="7" onblur="validarDepartamento(this);" onchange="getSubcategorias(this.value);" required>
+                                                        <option value="">Seleccione un departamento</option>
+                                                        <%
+                                                            DepartamentoDao departDao = new DepartamentoDao();
+                                                            ArrayList<DepartamentoDto> listDepartamentos;
+                                                            listDepartamentos = (ArrayList<DepartamentoDto>) departDao.obtenerDepartamentos();
+                                                            for (DepartamentoDto d : listDepartamentos) {
+                                                        %>
+                                                        <option value="<%= d.getIdDepartamento()%>"><%= d.getNombre() %></option>
+                                                        <%
+                                                            }
+                                                        %>
                                                     </select>
                                                 </div>
 
                                                 <div class="form-group has-feedback" id="inpCiudad">
                                                     <label class="control-label" for="ruCiudad">Ciudad:</label>
                                                     <select name="ruCiudad" id="ruCiudad" class="form-control" tabindex="7" onblur="validarCiudad(this)" required>
-                                                        <option value="">Seleccione una ciudad</option>                                                                                                       
-                                                        <option value="70001">Sincelejo</option>                                    
+                                                        <option value="">Seleccione una ciudad</option>                                                        
                                                     </select>
                                                 </div>
-                                                
+
                                                 <div class="form-group has-feedback" id="inpClave">
                                                     <label class="control-label" for="ruClave">Contraseña:</label>
                                                     <input type="password" class="form-control" value="mark42" name="ruClave" id="ruClave" tabindex="8" required onblur="validarClave(this)">
@@ -243,7 +257,7 @@
 
                                                 <div class="checkbox has-feedback">
                                                     <label class="control-label">
-                                                        <input required type="checkbox"> Acepto <a href="" data-toggle="modal" data-target="#modalTerminos">Terminos y Condiciones</a>
+                                                        <input required type="checkbox" tabindex="10"> Acepto <a href="#" data-toggle="modal" data-target="#modalTerminos">Terminos y Condiciones</a>
                                                     </label>
                                                 </div>
 
