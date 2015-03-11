@@ -118,6 +118,35 @@ public class UsuarioDao {
         }
         return usuarios;
     }
+    public UsuarioDto obtenerUsuario(long idUsuario) {  
+         UsuarioDto temp = new UsuarioDto();
+        sqlTemp = "SELECT `idUsuario`, `Nombres`, `Apellidos`, `Clave`, `Correo`, "
+                + "`FechaNacimiento`, `Direccion`, `idCiudad`, `FechaSistema`, `Imagen` `Estado` FROM `usuarios` WHERE idUsuario = ?";
+        try {
+            pstm = miCon.prepareStatement(sqlTemp);
+            pstm.setLong(1, idUsuario);
+            rs = pstm.executeQuery();
+            
+            while (rs.next()) {
+               
+                temp.setIdUsuario(rs.getLong("idUsuario"));
+                temp.setNombres(rs.getString("Nombres"));
+                temp.setApellidos(rs.getString("Apellidos"));
+                temp.setClave(rs.getString("Clave"));
+                temp.setCorreo(rs.getString("Correo"));
+                temp.setFechaNacimiento(rs.getString("FechaNacimiento"));
+                temp.setDireccion(rs.getString("Direccion"));
+                temp.setIdCiudad(rs.getInt("idCiudad"));
+                temp.setFechaSistema(rs.getString("FechaSistema"));
+                temp.setImagen(rs.getString("Imagen"));
+                temp.setEstado(rs.getInt("Estado"));
+               
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error, detalle: " + ex.getMessage());
+        }
+        return temp;
+    }
 
     public String actualizarUsuario(UsuarioDto usuarioActualizado) {
         try {

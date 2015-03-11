@@ -290,7 +290,7 @@
                                 <!-- Fin del título de la ventana de registro -->
                                 <br>
                                 <div class="container-fluid">
-                                    <form method="POST" action="GestionSesiones">
+                                    <form method="POST" action="ControladorOfertas">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="control-label" for="isDocumento">N° Documento</label>

@@ -4,6 +4,9 @@
     Author     : kennross
 --%>
 
+<%@page import="modelo.dtos.OfertasDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="modelo.daos.OfertaDao"%>
 <%@page import="modelo.dtos.UsuarioDto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,7 +18,7 @@
         <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
         <script type="text/javascript" src="../js/jquery-1.11.2.js"></script>
         <script type="text/javascript" src="../js/bootstrap.js"></script>
-        <title>Cliente - Farmer's Market</title>
+        <title>Ofertas - Farmer's Market</title>
     </head>
     <body>
         <%
@@ -55,9 +58,10 @@
 
                     <!-- Menú de navegación -->
                     <ul class="nav nav-pills nav-stacked">
-                        <li role="presentation" class="active text-left"><a href="indexc.jsp">Inicio <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="ofertas.jsp">Ofertas <i class="fa fa-shopping-cart "></i></a></li>
-                        <li role="presentation" class="text-left"><a href="mis-pedidosc.jsp">Mis-pedidos <i class="fa fa-list-alt "></i></a></li>
+                        <li role="presentation" class="text-left"><a href="indexc.jsp">Inicio <i class="fa fa-home "></i></a></li>
+                        <li role="presentation" class="active text-left"><a href="ofertas.jsp">Ofertas <i class="fa fa-arrows-h"></i></a></li>
+                        <li role="presentation" class="text-left"><a href="mis-pedidosc.jsp">Mis Pedidos <i class="fa fa-cubes "></i></a></li>                        
+
                     </ul>
                     <!-- Fin del menú de navegación -->
 
@@ -107,7 +111,11 @@
                                     </div>
                                 </form>
 
-
+                                <ul class="navbar-form navbar-toggle">                                                                                
+                                    <button class="btn btn-success navbar-brand" type="button">
+                                        Pedidos <span class="badge">4</span>
+                                    </button>
+                                </ul>
                             </div>
                         </div>
                     </nav>
@@ -115,9 +123,8 @@
 
                     <!-- Miga de pan -->
                     <ol class="breadcrumb">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Library</a></li>
-                        <li class="active">Data</li>
+                        <li><a href="indexpc.jsp">Inicio</a></li>
+                        <li class="active">Ofertas</li>                    
                     </ol>
                     <!-- Fin de miga de pan -->
 
@@ -146,241 +153,81 @@
                         </button>
                         <p class="text-center"><strong><i class="glyphicon glyphicon-exclamation-sign"></i> Esto Ocurrió!</strong> Mensaje de prueba para las alertas</p>
                     </div>
-                    Fin mensajes de alertas -->
+                    Fin de mensajes de alertas-->
 
                     <!-- Contenedor de contenido especifico -->
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <% if (request.getParameter("exitoso") != null) {
-
-                            %>
-                            <div class="alert alert-info text-center">
-                                <p class="lead">Su pedido se realizo exitosamente!!</p>
-                            </div>
-                            <%                                }
-                            %>
-                            <div class="page-header">
-                                <h4 class="text-center lead">Razones por las cuales utilizar Farmer's Market como cliente</h4>
-                            </div>
-                            <!-- Botonoes de razones -->
-                            <div class="row">                                    
-                                <div class="col-md-3">
-                                    <!-- Razón número 1 -->
-                                    <center>
-                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#razonUno" aria-expanded="false" aria-controls="collapseExample">
-                                            Mas cerca de tu hogar
-                                        </button>
-                                    </center>                                    
+                    <%
+                        OfertaDao oDao = new OfertaDao();
+                        ArrayList<OfertasDto> ofertas = (ArrayList<OfertasDto>) oDao.obtenerOfertas();
+                    %>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <!-- Titutlo -->
+                                <div class="page-header">
+                                    <h2 class="text-center">Ofertas</h2>
                                 </div>
-                                <div class="col-md-3">
-                                    <!-- Razón número 1 -->
-                                    <center>
-                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#razonDos" aria-expanded="false" aria-controls="collapseExample">
-                                            Confianza
-                                        </button>
-                                    </center>                                    
-                                </div>
-                                <div class="col-md-3">
-                                    <!-- Razón número 1 -->
-                                    <center>
-                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#razonTres" aria-expanded="false" aria-controls="collapseExample">
-                                            Calidad
-                                        </button>
-                                    </center>                                    
-                                </div>
-                                <div class="col-md-3">
-                                    <!-- Razón número 1 -->
-                                    <center>
-                                        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#razonCuatro" aria-expanded="false" aria-controls="collapseExample">
-                                            Comodidad
-                                        </button>
-                                    </center>                                    
-                                </div>
-                            </div>
-                            <!-- Fin  de botonoes de razones -->
-                            <hr>
-                            <!-- Mensajes de botonoes de razones -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="collapse" id="razonUno">
-                                        <div class="well">
-                                            <div class="media">
-                                                <div class="media-right">
-                                                    <img class="img-thumbnail" src="../img/productos/0007591428L-849x565-660x439-630x400.jpg" alt="...">
-                                                </div>
-                                                <div class="media-body">
-                                                    <h1 class="text-center">Mas cerca de tu hogar</h1>
-                                                    <p class="lead text-justify">
-                                                        Más cerca de tu casa Encuentra las mejores frutas y 
-                                                        verduras en nuestro catálogo" Todo lo mejor del 
-                                                        campo a un solo click, y con los mejores precios
-                                                    </p>                                                    
-                                                </div>                                                
-                                            </div>
-                                        </div>
+                                <!-- Formato de un pedido -->
+                                <%
+                                    for (OfertasDto oferta : ofertas) {
+                                %>
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h2 class="panel-title">
+                                            Por <em><strong><a href="#"><%=oferta.getProductor()%></a></strong></em>                                            
+                                        </h2>
                                     </div>
-                                    <!-- Fin de razón número 1 -->
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="collapse" id="razonDos">
-                                        <div class="well">
-                                            <div class="media">
-                                                <div class="media-body">
-                                                    <h1 class="text-center">Mas cerca de tu hogar</h1>
-                                                    <p class="lead text-justify">
-                                                        Más cerca de tu casa Encuentra las mejores frutas y 
-                                                        verduras en nuestro catálogo" Todo lo mejor del 
-                                                        campo a un solo click, y con los mejores precios
-                                                    </p>                                                    
-                                                </div>
-                                                <div class="media-right">
-                                                    <img class="img-thumbnail" src="../img/productos/0007591428L-849x565-660x439-630x400.jpg" alt="...">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Fin de razón número 1 -->
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="collapse" id="razonTres">
-                                        <div class="well">
-                                            <div class="media">
-                                                <div class="media-right">
-                                                    <img class="img-thumbnail" src="../img/productos/0007591428L-849x565-660x439-630x400.jpg" alt="...">
-                                                </div>
-                                                <div class="media-body">
-                                                    <h1 class="text-center">Mas cerca de tu hogar</h1>
-                                                    <p class="lead text-justify">
-                                                        Más cerca de tu casa Encuentra las mejores frutas y 
-                                                        verduras en nuestro catálogo" Todo lo mejor del 
-                                                        campo a un solo click, y con los mejores precios
-                                                    </p>                                                    
-                                                </div>                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Fin de razón número 1 -->
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="collapse" id="razonCuatro">
-                                        <div class="well">
-                                            <div class="media">
-                                                <div class="media-body">
-                                                    <h1 class="text-center">Mas cerca de tu hogar</h1>
-                                                    <p class="lead text-justify">
-                                                        Más cerca de tu casa Encuentra las mejores frutas y 
-                                                        verduras en nuestro catálogo" Todo lo mejor del 
-                                                        campo a un solo click, y con los mejores precios
-                                                    </p>                                                    
-                                                </div>
-                                                <div class="media-right">
-                                                    <img class="img-thumbnail" src="../img/productos/0007591428L-849x565-660x439-630x400.jpg" alt="...">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>                                        
-                                </div>
-                            </div>
-                        </div>                           
-                    </div>                        
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Código Oferta</th>
+                                                    <th>Producto</th>
+                                                    <th>Presentación</th>
+                                                    <th>Precio unitario</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th><%=oferta.getIdOferta()%></th>
+                                                    <th><%=oferta.getProducto()%></th>
+                                                    <th><%=oferta.getPresentacion()%></th>
+                                                    <th><%=oferta.getPrecio()%></th>
+                                                </tr>                                                
+                                            </tbody>                                            
+                                        </table>
+                                        <span class="lead">Fecha Oferta:</span> <%=oferta.getFechaInicio()%>
 
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="../img/publicidad.jpg" alt="..." class="img-thumbnail">
-                        </div>
-                        <div class="page-header">
-                            <h1 class="text-center lead">Nuevas Ofertas <i class="fa fa-openid fa-2x"></i></h1>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <h3 class="panel-title">
+                                            <!-- Novedades -->
+                                            <!-- link para modal para agregar novedad -->
+                                            <a href="../ControladorOfertas?id=<%=oferta.getIdOferta()%>">
+                                                <i class="fa fa-cart-arrow-down pull-left"></i> <span class="pull-left text-success">Realizar pedido</span>
+                                            </a>
+
+                                            <!-- link para modal para mostrar novedades -->
+                                            <a href="#" data-toggle="modal" ><!--data-target="#modalListadoNovedades"-->
+                                                <i class="fa fa-android pull-right"> </i> <span class="pull-right text-success">Ver Novedad(es)</span>
+                                            </a>                                                                                        
+                                            <!-- Fin de novedades -->
+                                            &nbsp;
+                                        </h3>
+                                    </div>
+                                </div>
+                                <!-- Fin de formato de un pedido -->     
+                                <%
+                                    }
+                                %>
+                            </div>
+
+                            <!-- Publicidad -->
+                            <div class="col-md-2">
+                                <img src="../img/bann.jpg" alt="Publicidad de frutas">                                
+                            </div>
+                            <!-- Fin de publicidad -->
                         </div>                        
-                        <div class="col-md-3">                            
-                            <div class="row">                                
-                                <div class="col-md-12">
-                                    <div class="thumbnail">
-                                        <img src="../img/descarga.svg" alt="...">
-                                        <div class="caption">
-                                            <h3>Thumbnail label</h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="thumbnail">
-                                        <img src="../img/descarga.svg" alt="...">
-                                        <div class="caption">
-                                            <h3>Thumbnail label</h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="thumbnail">
-                                        <img src="../img/descarga.svg" alt="...">
-                                        <div class="caption">
-                                            <h3>Thumbnail label</h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">                          
-                        <div class="col-md-3">
-                            <div class="row">                                
-                                <div class="col-md-12">
-                                    <div class="thumbnail">
-                                        <img src="../img/descarga.svg" alt="...">
-                                        <div class="caption">
-                                            <h3>Thumbnail label</h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="thumbnail">
-                                        <img src="../img/descarga.svg" alt="...">
-                                        <div class="caption">
-                                            <h3>Thumbnail label</h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="thumbnail">
-                                        <img src="../img/descarga.svg" alt="...">
-                                        <div class="caption">
-                                            <h3>Thumbnail label</h3>
-                                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">Ver Detalles</a> <a href="#" class="btn btn-success" role="button">Pedir</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <img src="../img/publicidad.jpg" alt="..." class="img-thumbnail">
-                        </div>
                     </div>
                     <!-- Fin de contenedor de contenido especifico -->
 
@@ -487,7 +334,139 @@
                         </div>
                         <!-- Fin de formulario de Contáctenos -->
 
+                        <!-- Listado de novedades por pedido -->
+                        <div class="modal fade" id="modalListadoNovedades">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title"><strong>Novedades del pedido</strong> <smal>con código: 378499</smal></h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <strong>Estado:</strong>
+                                                    <span>Cancelado</span>
 
+                                                    <div class="pull-right">
+                                                        <strong>Fecha de novedad:</strong>
+                                                        <span>17 de Abril de 2015</span>                                                                                                                                                                
+                                                    </div>
+                                                </h3>                                                
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>
+                                                    Some default panel content here. 
+                                                    Nulla vitae elit libero, a pharetra augue. 
+                                                    Aenean lacinia bibendum nulla sed consectetur. 
+                                                    Aenean eu leo quam. Pellentesque ornare sem lacinia 
+                                                    quam venenatis vestibulum. Nullam id dolor id nibh 
+                                                    ultricies vehicula ut id elit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <strong>Estado:</strong>
+                                                    <span>Cancelado</span>
+
+                                                    <div class="pull-right">
+                                                        <strong>Fecha de novedad:</strong>
+                                                        <span>17 de Abril de 2015</span>                                                                                                                                                                
+                                                    </div>
+                                                </h3>                                                
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>
+                                                    Some default panel content here. 
+                                                    Nulla vitae elit libero, a pharetra augue. 
+                                                    Aenean lacinia bibendum nulla sed consectetur. 
+                                                    Aenean eu leo quam. Pellentesque ornare sem lacinia 
+                                                    quam venenatis vestibulum. Nullam id dolor id nibh 
+                                                    ultricies vehicula ut id elit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <strong>Estado:</strong>
+                                                    <span>Cancelado</span>
+
+                                                    <div class="pull-right">
+                                                        <strong>Fecha de novedad:</strong>
+                                                        <span>17 de Abril de 2015</span>                                                                                                                                                                
+                                                    </div>
+                                                </h3>                                                
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>
+                                                    Some default panel content here. 
+                                                    Nulla vitae elit libero, a pharetra augue. 
+                                                    Aenean lacinia bibendum nulla sed consectetur. 
+                                                    Aenean eu leo quam. Pellentesque ornare sem lacinia 
+                                                    quam venenatis vestibulum. Nullam id dolor id nibh 
+                                                    ultricies vehicula ut id elit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <strong>Estado:</strong>
+                                                    <span>Cancelado</span>
+
+                                                    <div class="pull-right">
+                                                        <strong>Fecha de novedad:</strong>
+                                                        <span>17 de Abril de 2015</span>                                                                                                                                                                
+                                                    </div>
+                                                </h3>                                                
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>
+                                                    Some default panel content here. 
+                                                    Nulla vitae elit libero, a pharetra augue. 
+                                                    Aenean lacinia bibendum nulla sed consectetur. 
+                                                    Aenean eu leo quam. Pellentesque ornare sem lacinia 
+                                                    quam venenatis vestibulum. Nullam id dolor id nibh 
+                                                    ultricies vehicula ut id elit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="panel panel-primary">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">
+                                                    <strong>Estado:</strong>
+                                                    <span>Cancelado</span>
+
+                                                    <div class="pull-right">
+                                                        <strong>Fecha de novedad:</strong>
+                                                        <span>17 de Abril de 2015</span>                                                                                                                                                                
+                                                    </div>
+                                                </h3>                                                
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>
+                                                    Some default panel content here. 
+                                                    Nulla vitae elit libero, a pharetra augue. 
+                                                    Aenean lacinia bibendum nulla sed consectetur. 
+                                                    Aenean eu leo quam. Pellentesque ornare sem lacinia 
+                                                    quam venenatis vestibulum. Nullam id dolor id nibh 
+                                                    ultricies vehicula ut id elit.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Fin de listado de novedades por pedido -->
                     </div>
 
                 </div>
@@ -508,10 +487,11 @@
             </div>
             <!-- Fin del Footer -->
         </div>
-        <%            } else {
+
+        <%
+            } else {
                 response.sendRedirect("../index.jsp");
             }
-
         %>
     </body>
 </html>

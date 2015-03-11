@@ -8,6 +8,10 @@
         <servlet-name>PeticionesAjax</servlet-name>
         <servlet-class>controladores.validaciones.PeticionesAjax</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorOfertas</servlet-name>
+        <servlet-class>controladores.gestiones.ControladorOfertas</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GestionUsuarios</servlet-name>
         <url-pattern>/GestionUsuarios</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>PeticionesAjax</servlet-name>
         <url-pattern>/PeticionesAjax</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorOfertas</servlet-name>
+        <url-pattern>/ControladorOfertas</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
